@@ -2,3 +2,6 @@
 
 # ignore input files
 */*/inp.in
+
+# ignore compiled files
+*/*/*.exe
