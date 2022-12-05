@@ -1,0 +1,4 @@
+.vscode/
+
+# ignore input files
+*/*/inp.in
