@@ -36,6 +36,7 @@ int main() {
             }
 
         }
+        myfile.close();
     }
 
     cout << typePrioritySum << endl;
