@@ -2,8 +2,6 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include <algorithm> // max_element
-#include <iterator>  // distance
 using namespace std;
 
 int main() {
