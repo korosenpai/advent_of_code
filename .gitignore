@@ -1,7 +1,7 @@
 .vscode/
 
 # ignore input files
-*/*/inp.in
+*/*/*.in
 
 # ignore compiled files
 */*/*.exe
