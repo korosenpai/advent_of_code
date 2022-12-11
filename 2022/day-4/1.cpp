@@ -2,7 +2,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include <cstring>
+#include <cstring> // strtok
 using namespace std;
 
 /*
