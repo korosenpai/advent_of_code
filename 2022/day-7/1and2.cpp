@@ -44,7 +44,8 @@ sort in ascending order -> [
     24933642,
     48381165
 ]
-loop through elements and check if number >= 30000000 -> that is number needed
+loop through elements and check if number >= space required -> that is number needed
+space required -> update size - (totalSpace - dirSizes["/"])
 
 */
 
@@ -123,7 +124,6 @@ int main() {
 
 
         //////////////// part 2 ////////////////
-        // 32283214 <- not good
         
         cout << "\nPART 2" << endl;
         
