@@ -4,6 +4,7 @@
 #include <map>
 #include <vector>
 #include <cstring> // strtok
+#include <algorithm> // sort
 using namespace std;
 
 /*
@@ -27,6 +28,23 @@ ignore '$ ls'
 ignore 'dir dir'
 
 if line does not start with $ and dir, split and add first element to all dirs in currentDir
+
+PART 2
+
+vector<int> dirSizesVec = [
+    48381165,
+    94853,
+    584,
+    24933642
+]
+
+sort in ascending order -> [
+    584,
+    94853,
+    24933642,
+    48381165
+]
+loop through elements and check if number >= 30000000 -> that is number needed
 
 */
 
@@ -102,6 +120,37 @@ int main() {
         }
 
         cout << sumOfSmallDirs << endl;
+
+
+        //////////////// part 2 ////////////////
+        // 32283214 <- not good
+        
+        cout << "\nPART 2" << endl;
+        
+
+        int totalSpace = 70000000;
+        int spaceLeft = totalSpace - dirSizes["/"]; // unused space in disk
+
+        int updateSize = 30000000;
+        int spaceRequired = updateSize - spaceLeft;
+        
+        vector<int> dirSizesVec = {};
+
+        for (auto itr = dirSizes.begin(); itr != dirSizes.end(); ++itr) {
+            dirSizesVec.push_back(itr->second);
+        }
+
+        sort(dirSizesVec.begin(), dirSizesVec.end());
+
+        for (int i = 0; i < dirSizesVec.size(); ++i) {
+            // check first elem big enough
+            if (dirSizesVec[i] >= spaceRequired) {
+                cout << "size of dir to remove: " << dirSizesVec[i] << endl;
+                break;
+            }
+        }
+
+
     }
     else { cout << "file not found" << endl; }
 }
