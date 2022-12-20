@@ -9,19 +9,19 @@ using namespace std;
 /*
 
 map<string, int> dirSizes = {
-    "/": 48381165,
-    "a": 94853,
-    "e": 584,
-    "d": 24933642
+    ("/", 48381165),
+    ("a", 94853),
+    ("e", 584),
+    ("d", 24933642)
 }
 
 keep vector of dir currently in ('currentDir')
     cd / -> [/]
-    cd a -> [/, a]
-    cd b -> [/, a, b]
-    cd .. -> [/, a]
+    cd a -> [/, //a]
+    cd b -> [/, //a, //a/b]
+    cd .. -> [/, //a]
     cd / -> [/]
-    cd c -> [/, c]
+    cd c -> [/, //c]
 
 ignore '$ ls'
 ignore 'dir dir'
@@ -69,7 +69,7 @@ int main() {
                 else {
                     // create dirname of current place in dir -> to avoid if there is another dir
                     // of equal name in other dir
-                    
+
                     string dir = "";
                     for (int i = 0; i < currentDir.size(); ++i) {
                         dir += "/" + currentDir[i];
