@@ -9,7 +9,7 @@ using namespace std;
 
 /*
 
-VAR markerSize is what cahnges in the two parts -> part 1 = 4; part 2 = 14 to get results
+VAR markerSize is what changes in the two parts -> part 1 = 4; part 2 = 14 to get results
 
 loop all chars
 add char to list
@@ -35,12 +35,6 @@ int main() {
                 if (marker.size() == markerSize) {
                     // create set and check if all different
                     set<char> markerSet(marker.begin(), marker.end());
-
-                    // cout << "Set: ";
-                    // for (int x : markerSet) {
-                    //     cout << string(1, x) << " ";
-                    // }
-                    // cout << endl;
 
                     if (markerSet.size() == markerSize) {
                         // successfuly found the distinct marker
