@@ -7,7 +7,6 @@
 using namespace std;
 
 /*
-1001951 <- not good
 
 map<string, int> dirSizes = {
     "/": 48381165,
@@ -68,6 +67,9 @@ int main() {
                     currentDir.pop_back();
                 }
                 else {
+                    // create dirname of current place in dir -> to avoid if there is another dir
+                    // of equal name in other dir
+                    
                     string dir = "";
                     for (int i = 0; i < currentDir.size(); ++i) {
                         dir += "/" + currentDir[i];
@@ -75,9 +77,7 @@ int main() {
                     dir += lineVec[2];
 
                     currentDir.push_back(dir);
-                    if (dirSizes.find(dir) == dirSizes.end()) {
-                        dirSizes.insert(pair<string, int>(dir, 0));
-                    }
+                    dirSizes.insert(pair<string, int>(dir, 0));
                 }                
             }
             else if (lineVec[0] != "dir") {
